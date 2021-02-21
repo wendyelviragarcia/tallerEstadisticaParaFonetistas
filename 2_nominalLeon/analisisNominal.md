@@ -7,4 +7,5 @@ Elvira-García, Wendy. 2020. [Fusión de patrones entonativos en variedades ling
 Vamos a usar algunos paquetes de R
 Para instalarlos escribid en el terminal de R (la parte de abajo de RStudio)
 ```r
-install.packages(dplyr,ggplot2,plyr)```
+install.packages(dplyr,ggplot2,plyr)
+```
