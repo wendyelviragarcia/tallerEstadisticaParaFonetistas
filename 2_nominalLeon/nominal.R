@@ -11,6 +11,9 @@
 library(readxl)
 misDatos <- read_excel("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/2_nominalLeon/base_datos_leon.xlsx")
 
+misDatos$Informante 
+#Qué ves?
+
 misDatos$Informante <- as.factor(misDatos$Informante)
 misDatos$Tarea <- as.factor(misDatos$Tarea)
 misDatos$Archivo <- as.factor(misDatos$Archivo)
