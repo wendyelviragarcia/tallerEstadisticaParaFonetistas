@@ -25,5 +25,5 @@ point_label_extraction:
 5. Estadística inferencial para datos nominales (chi-square y test exacto de Fisher)
 
 ## Algunos resultados esperables para abrir boca
-![image](figuras/graficofrecs.png)
+![image](../figuras/graficofrecs.png)
 
