@@ -56,6 +56,9 @@ ggplot(data=data, aes(x=Tarea, y=Frecuencia, fill=Patrón)) +
 # position="stack"
 # position="fill"
 
+# lista de colores 
+# http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf?utm_source=twitterfeed&utm_medium=twitter
+
 # Vamos a cambiar la etiqueta de patrón para que sea más entendible
 library(plyr)
 data$Patrón<- revalue(data$Patrón, c("¡H* LH%"="Híbrido", "¡H* L%"="Tradicional"))
