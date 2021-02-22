@@ -21,7 +21,7 @@ Elvira-García, Wendy. 2020. [Fusión de patrones entonativos en variedades ling
 Los datos tienen esta pinta:
 
 Archivo | Tarea | Patrón
------------- | -------------
+------------ | ------------- | -------------
 wl61pwpi1.wav | Lectura | ¡H* LH%
 wl61pwpi2.wav | Lectura | ¡H* LH%
 hora1.wav | Inducido | ¡H* LH%
