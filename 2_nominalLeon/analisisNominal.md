@@ -29,9 +29,8 @@ hora2.wav | Inducido | ¡H* L%
 casaspequenas1.wav | Maptask | ¡H* L%
 
 ## La extracción de esos datos
-En esta clase vamos a trabajar con esa base de datos ya preparada en un archivo Excel, pero si queréis conseguir una base de datos igual a partir de vuestros TextGrids, previamente tendríais que usar un script de Praat para extraer la anotación (labels de un tier de puntos) de vuestros archivos.
-
- * point_label_extraction:
+En esta clase vamos a trabajar con esa base de datos ya preparada en un archivo Excel, pero si queréis conseguir una base de datos igual a partir de vuestros TextGrids, previamente tendríais que usar un script de Praat para extraer la anotación (labels de un tier de puntos) de vuestros archivos. Por ejemplo, este:
+ * [point_label_extraction](https://github.com/wendyelviragarcia/TextGrid_labels_extraction):
 
 
 
