@@ -73,3 +73,7 @@ misDatos$Nombre[1]
 as.character(misDatos$F0)
 as.factor(misDatos$F0)
 as.numeric(misDatos$F0)
+
+#Obviamente, no vamos a crear una base de datos con miles de datos así.
+
+# Así que, ¡vamos con datos de verdad!
