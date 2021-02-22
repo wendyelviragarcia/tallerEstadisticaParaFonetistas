@@ -4,8 +4,10 @@ Taller sobre estadística con R ofrecido en la Universidad de La Laguna (marzo, 
 
 La idea de este curso es realizar un trabajo que emule el trabajo que hace en R un investigador para escribir un paper desde cargar la base de datos, hacer los análisis estadísticos, crear las figuras y reportar los resultados.
 
-1. Instalación de R+Rstudio
-2. Funciones y variables
+## [Sesiones](#sesiones)
+
+1. [Instalación de R+Rstudio](0_antesDeClase/InstruccionesInstalacion.md)
+2. [Los básicos: Funciones y variables](1_losBasicos/basicos.md)
 3. Cargar nuestra base de datos
 4. Tipos de variable: preparando nuestra base de datos 
 5. Estadística descriptiva: medias, medianas, curtosis, asimetría…
