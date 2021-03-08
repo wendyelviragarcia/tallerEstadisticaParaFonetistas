@@ -57,7 +57,9 @@ d[1]
 d[[1]]
 
 # Pero lo más importante en R son los dataframes
-misDatos <- data.frame("Nombre" = c("María", "Mario"), "Sexo" = c("Hombre","Mujer"), "F0" = c(240,110))
+misDatos <- data.frame("Sexo" = c("Hombre","Mujer"), "PatronesAscendentes" = c(150,120), "PatronesDescendentes" = c(150,180))
+misDatos <- data.frame("Nombre" = c("Mario", "María"), "Sexo" = c("Hombre","Mujer"), "F0" = c(90,240))
+
 misDatos
 #misDatos[fila,columna]
 misDatos[1,1]
