@@ -18,15 +18,18 @@ Vamos a trabajar con datos de ritmo que han sido publicados en:
 
 Elvira-García, Wendy y Marrero, Victoria. 2020. [El ritmo y la tasa de habla como ayuda diagnóstica en síndromes neurodegenerativos de los lóbulos fronto-temporales](http://www.doi.org/10.3989/loquens.2020.068). Loquens, 7(1), e068. 10.3989/loquens.2020.068
 
+El ritmo se mide en muchas métricas diferentes (no hay un consenso claro sobre cuáles usar). En esta clase vamos a ver algunas. Específicamente, la tasa de habla (en sonidos por segundo), el porcentaje de vocales (del tiempo de habla total) y el varco de las consonantes (Dellwo et Wagner, 2003). Los grupos que analizaremos son Controles vs pacientes diagnosticados con algún tipo de afasia progresiva primaria (demencia).
+
+
 Los datos tienen esta pinta:
 
-id | Diagnóstico | TasaDeHabla
------------- | ------------- | -------------
-1 | Control | 0.015
-2 | Control | 0.018
-3 | APP_sem | 0.013
-4 | APP_log | 0.010
-5 | ELA | 0.006
+id | Diagnóstico | TasaDeHabla| Porcentaje de Consonantes | varcoC
+------------ | ------------- | -------------| -------------| -------------
+1 | Control | 0.015| 63.15|16.40
+2 | Control | 0.018| 58.41|15.58
+3 | APP_sem | 0.013| 55.55| 20.66
+4 | APP_log | 0.010| 50.35|26.36
+5 | ELA | 0.006| 34.23| 16.18
 
 ## La extracción de esos datos
 En esta clase vamos a trabajar con esa base de datos ya preparada en un archivo CSV (comma separated file), pero si queréis conseguir una base de datos igual a partir de vuestros TextGrids, previamente tendríais que usar un script de Praat calcular la tasa de habla y/o diferentes métricas de ritmo de vuestros archivos. También, si tenéis vuestros TextGrids preparados podriáis usar esto: 
