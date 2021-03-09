@@ -11,7 +11,7 @@ Para poder trabajar, vamos a necesitar 2 'programas'. Son **R** y **RStudio**.
 
 Instala primero R y después RStudio. Para descargar los programas sigue los enlaces de abajo. Después, tendrás que seguir los pasos del instalador, como harías en la instalación de cualquier *software*. 
 
-¡Atención! Instala los programas en un **ordenador**, no en una tablet (tipo iPad), móvil o similar. N.B. Una tablet a la que has puesto teclado sigue siendo una tablet.
+¡Atención! Instala los programas en un **ordenador**, no en un iPad o en una tablet (cuidado hay tablets que se venden con teclado incluido y siguen siendo tablets).
 
 ## Instalación de R
 Baja el instalador que corresponda a tu sistema operativo haciendo clic en el enlace, haz doble clic en el instalador y sigue los pasos. 
