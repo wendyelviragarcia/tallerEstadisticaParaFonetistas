@@ -1,10 +1,9 @@
 # Haz esto antes del taller
 Para poder trabajar, vamos a necesitar 2 'programas'. Son R y RStudio.
 
-Aquí te guío para para que los puedas instalar. Instala primero R y después RStudio
+Aquí te guío para para que los puedas instalar. Instala primero R y después RStudio. Clica en los links, para descargar los instaladores del programa.
 
 ## Instalación de R
-Descarga el archivo de instalación siguiendo los links. Se instala como cualquier otro programa, pero dejo también las instrucciones de instalación
  - [Versión para Windows](https://cloud.r-project.org/bin/windows/base/R-4.0.4-win.exe) y sus [instrucciones](https://cloud.r-project.org/bin/windows/base/README.R-4.0.4)
  - [Versión para Mac](https://cran.r-project.org/bin/macosx/R-4.0.4.pkg)
  -  Si usas Linux, intenta instalarlo a partir de tu gestor de paquetes. Si no está, sigue este [link](https://cloud.r-project.org/bin/linux/)
