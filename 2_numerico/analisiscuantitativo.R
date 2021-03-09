@@ -4,7 +4,11 @@ library(pgirmess)
 
 setwd("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/2_numerico/")
 
-df <- read.csv("datosTasaHablayRitmo.csv", sep=";", stringsAsFactors=TRUE)
+df <- read.csv("datosTasaHablayRitmo.csv", sep=";", dec= ".", stringsAsFactors=TRUE)
+
+# Nota: scripts de praat normalmente el output es tab separated
+#df <- read.csv("datosTasaHablayRitmo.csv", sep="/t", stringsAsFactors=TRUE)
+
 # ver datos
 mean(df$Edad)
 min(df$Edad)
@@ -32,7 +36,7 @@ ggplot(df, aes(x=reorder(Diagnostico, -speechRate, FUN = median), y=speechRate,c
   guides(colour=FALSE)+
   labs(title = "Tasa de habla")
 
-ggsave("speechRate.tiff", units="cm", width=14, height=8, dpi=100, , compression = 'lzw')
+ggsave("speechRate.tiff", units="cm", width=14, height=8, dpi=100, compression = 'lzw')
 
 
 ###########

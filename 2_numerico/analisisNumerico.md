@@ -1,4 +1,4 @@
-# Análisis de datos nominales
+# Análisis de datos numéricos (o variables continuas)
 
 ## Antes de empezar
 Vamos a usar algunos paquetes de R
@@ -11,9 +11,12 @@ install.packages("dplyr","ggplot2","plyr")
 2. Variables factor: importancia y conversión de char a factor
 3. Descriptivos
 4. Gráficos de cajas y bigotes (crear y guardar)
-5. Estadística inferencial para datos numéricos (comprobación de la normalidad, anova y Mann-whitney y post-hocs)
+5. Estadística inferencial para datos numéricos (comprobación de la normalidad, anova y Mann-Whitney y post-hocs)
 
-## Los datos
+## Archivos necesarios
+Para seguir la sesión descarga en tu ordenador el [script de R]() y la [base de datos que usaremos](). Son los archivos que están en esta misma carpeta (también puedes seguir los links).
+
+## Información sobre los datos
 Vamos a trabajar con datos de ritmo que han sido publicados en:
 
 Elvira-García, Wendy y Marrero, Victoria. 2020. [El ritmo y la tasa de habla como ayuda diagnóstica en síndromes neurodegenerativos de los lóbulos fronto-temporales](http://www.doi.org/10.3989/loquens.2020.068). Loquens, 7(1), e068. 10.3989/loquens.2020.068
@@ -36,7 +39,7 @@ En esta clase vamos a trabajar con esa base de datos ya preparada en un archivo 
  * [Web-app de shiny para calcular parámetros de ritmo]( https://wendyelvira.shinyapps.io/ritmo/)
 
 ## Cómo aplicar este análisis a otros datos
-Por supuesto este mismo análisis se puede aplicar a otros datos en los que haya un resultado para cada hablante o fichero. Por ejemplo, el rango de F0 de la tónica en un momento determinado. La duración de las sílabas, etc...
+Este mismo análisis se puede aplicar a otros datos en los que haya un resultado para cada hablante o fichero. Por ejemplo, el F0 medio de hombres y mujeres, el rango de F0 de la tónica en un momento determinado para una serie de hablantes, la diferencia entre F1 y F2 según si la vocal es tónica o átona, la duración de la sílaba tónica en una serie de palabras, etc...
 
 
 ## Algunos resultados esperables para abrir boca
