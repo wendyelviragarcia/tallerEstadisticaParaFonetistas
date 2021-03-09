@@ -31,11 +31,11 @@ En cada carpeta encontrarás un resumen de lo que contiene la sesión (archivo .
 
 ## Bibliografía
 La única bibliografía del curso es este material, pero si te interesa el tema y quieres profundizar, aquí tienes algunas referencias.
-- Para lingüistas en R (especialmente para fonetistas)
+Para lingüistas en R (especialmente para fonetistas)
  * Winter, B. 2013. [A very basic tutorial for performing linear mixed effects analyses](http://www.bodowinter.com/uploads/1/2/9/3/129362560/bw_lme_tutorial2.pdf). arXiv preprint arXiv:1308.5499.
  * Winter, B. 2019. Statistics for linguists: An introduction using R. Routledge.
-- Para lingüistas en Python (especialmente para procesamiento del lenguaje natural)
+Para lingüistas en Python (especialmente para procesamiento del lenguaje natural)
  * Martín-Fuertes Moreno, Leticia. 2020. [Introducción a la programación para humanistas](https://github.com/nimbusaeta/lingufriendly#nomenclatura-de-los-temas-y-ejercicios)
  * Casado Mancebo, Mario. 2021. [Curso de iniciación en Python](https://cursos.mcasado.org/cursos/curso-de-iniciación-en-python/)
-- Para investigadores en general
+Para investigadores en general
  *  Maurandi, Antonio; Del Rio, Laura; Balsalobre Rodríguez, Carlos. 2013. [Fundamentos estadísticos para investigación. Introducción a R](https://gauss.inf.um.es/files/Fundamentos-estadisticos-para-investigacionIntroduccion-a-R.pdf)
