@@ -1,4 +1,9 @@
-# Haz esto antes del taller
+# Estadística aplicada a la investigación lingüística
+
+¡Hola!
+Si has llegado hasta aquí, probablemente es porque te has apuntado a un taller de estadística online hospedado por la Universidad de La Laguna. Ese taller será enteramente en R así que antes de empezar, tendrás que preparar tu ordenador.
+
+## ¿Qué necesito?
 Para poder trabajar, vamos a necesitar 2 'programas'. Son R y RStudio.
 
 Instala primero R y después RStudio. Clica en el link de tu sistema operativo (Windows, MacOS o Linux) para descargar los instaladores del programa. Instala los programas en un **ordenador**, no en una tablet (tipo iPad), móvil o similar. N.B. Una tablet a la que has puesto teclado sigue siendo una tablet.
