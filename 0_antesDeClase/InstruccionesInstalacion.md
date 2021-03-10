@@ -2,7 +2,7 @@
 
 ¡Hola!
 
-Si has llegado hasta aquí, probablemente es porque te has apuntado a un taller de estadística online hospedado por la Universidad de La Laguna. Ese taller será enteramente en R así que antes de empezar, tendrás que preparar tu ordenador.
+Si has llegado hasta aquí, probablemente es porque te has apuntado a un [taller de estadística online hospedado por la Universidad de La Laguna](https://eventos.ull.es/53843/detail/traduccion-y-estadistica-aplicada-a-la-investigacion-linguistica.html). Ese taller será enteramente en R así que antes de empezar, tendrás que preparar tu ordenador.
 
 ¿Y cómo hacerlo? Pues, básicamente, tendrás que descargarte e instalar en tu ordenador dos programas. Por aquí debajo dejo los enlaces directos a los programas dependiendo de tu sistema operativo. Si tienes problemas o simplemente lo prefieres, podemos instalar los programas juntos al inicio del taller, pero, para no sobrecargar la banda durante el taller, sería mejor que tuvieras los archivos de instalación descargados previamente en tu ordenador.
 
