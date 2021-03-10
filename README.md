@@ -1,5 +1,5 @@
 # Taller de estadística para fonetistas
-Taller sobre [estadística con R ofrecido en la Universidad de La Laguna](https://eventos.ull.es/53843/detail/traduccion-y-estadistica-aplicada-a-la-investigacion-linguistica.html). (marzo, 2021)
+Taller sobre [estadística con R ofrecido en la Universidad de La Laguna](https://eventos.ull.es/53843/detail/traduccion-y-estadistica-aplicada-a-la-investigacion-linguistica.html) (marzo, 2021).
 
 La idea de este curso es realizar un trabajo que emule el trabajo que hace en R un investigador para escribir un paper desde cargar la base de datos, hacer los análisis estadísticos, crear las figuras y reportar los resultados.
 
