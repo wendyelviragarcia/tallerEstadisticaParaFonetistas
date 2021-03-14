@@ -51,6 +51,11 @@ c<- c(14, 15, 10)
 c[1]
 c[2]
 
+min(c)
+mean(c)
+max(c)
+length(c)
+
 # list() crea listas pueden ser números o letras
 d<- list("hola", "hola2", "hola3")
 d[1]

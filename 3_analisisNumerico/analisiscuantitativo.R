@@ -1,8 +1,12 @@
 library(multcomp)
-library("car")
+library(car)
 library(pgirmess)
 
-setwd("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/2_numerico/")
+# ruta en Windows 
+# C:\\Users\\Nombre de usuario\\Desktop
+# C:/Users/Nombre de usuario/Desktop
+
+setwd("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/3_numerico/")
 
 df <- read.csv("datosTasaHablayRitmo.csv", sep=";", dec= ".", stringsAsFactors=TRUE)
 
@@ -50,11 +54,14 @@ shapiro.test(df$PerC) #normal
 # 30 casos (en este caso 30 pacientes porque cada uno solo tiene 1 dato asociado)
 library("nortest")
 lillie.test(x = df$PerC)
+lillie.test(x = df$PerC)
 
 
 shapiro.test(df$VarcoC) #NO NORMAL
 shapiro.test(df$DeltaC) #NO NORMAL
-             
+
+# para los normales también hay que mirar igualdad de las varianzas 
+# llamada homoscedasticity
 library(car)
 leveneTest(df$DeltaC,df$Diagnostico) #si
 
@@ -76,7 +83,8 @@ plotn <- function(x,main="Histograma de frecuencias \ny distribución normal",
 }
 plotn(df$VarcoV,main="Distribución normal") #Grafico de x
 
-
+qqnorm(df$VarcoV, pch = 1, frame = FALSE)
+qqline(df$VarcoV, col = "steelblue", lwd = 2)
 ###############
 # ESTADÍSTICA INFERENCIAL (DE DONDE SALEN LAS P)
 ################

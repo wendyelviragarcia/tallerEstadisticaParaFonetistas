@@ -1,6 +1,13 @@
 # Clase 2 
 
 # Vamos a hacer que las cosas se nos guarden donde deben y se abran desde donde deben
+getwd()
+# en windows
+
+# ruta en Windows 
+# C:\\Users\\Nombre de usuario\\Desktop
+# C:/Users/Nombre de usuario/Desktop
+
 setwd("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/2_nominalLeon/")
 ##########
 # Datos nominales

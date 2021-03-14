@@ -13,15 +13,18 @@ En cada carpeta encontrarás un resumen de lo que contiene la sesión (archivo .
 * Uso de la consola
 * Tipos de variable
 * Creación de dataframes
-2. [Análisis de datos numéricos](2_numéricos)
-* Estadística descriptiva: medias, medianas, curtosis, asimetría…
-* Gráficos de cajas y bigotes
-* ¡Quiero una p! Estadística inferencial I datos numéricos (F0, duración, intensidad...): pruebas de normalidad, tests 
 
-3. [Análisis de datos nominales](3_nominalLeon)
+3. [Análisis de datos nominales](2_analisisNominal)
 * Frecuencias y tablas de contingencia
 * Gráficos de barras
 * ¡Quiero una p! Estadística inferencial para datos nominales (transcripciones fonológicas de la entonación): chi square y test exacto de Fisher
+* Ejemplo de modelo para datos nominales (log-linear model)
+
+2. [Análisis de datos numéricos](3_analisisNumerico)
+* Estadística descriptiva
+* Gráficos de cajas y bigotes
+* ¡Quiero una p! Estadística inferencial para datos numéricos (como F0, duración, intensidad...): pruebas de normalidad, de igualdad de las varianzas y tests
+
 4. [Modelos mixtos generalizados](4_modelosMixtos)
 * Modelos lineales (lm)
 -efectos fijos (sexo, variedad)
