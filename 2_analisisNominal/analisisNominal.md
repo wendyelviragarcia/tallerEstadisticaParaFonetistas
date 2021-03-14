@@ -4,7 +4,7 @@
 Vamos a usar algunos paquetes de R
 Para instalarlos escribid en el terminal de R (la parte de abajo de RStudio)
 ```R
-install.packages("dplyr","ggplot2","plyr")
+install.packages("readxl","dplyr","ggplot2","plyr")
 ```
 ## El contenido de la sesión
 1. Cargar una base de datos en formato Excel
