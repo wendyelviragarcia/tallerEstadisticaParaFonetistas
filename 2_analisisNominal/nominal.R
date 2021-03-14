@@ -1,4 +1,3 @@
-# Clase 2 
 
 # Vamos a hacer que las cosas se nos guarden donde deben y se abran desde donde deben
 getwd()
@@ -8,7 +7,7 @@ getwd()
 # C:\\Users\\Nombre de usuario\\Desktop
 # C:/Users/Nombre de usuario/Desktop
 
-setwd("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/2_nominalLeon/")
+setwd("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/2_analisisNominal/")
 ##########
 # Datos nominales
 ##########
@@ -20,7 +19,7 @@ setwd("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/2_nomin
 # En este caso leemos desde un archivo excel 
 # lo vamos a hacer mediante interfaz, después copiamos el código para tenerlo para siempre
 library(readxl)
-misDatos <- read_excel("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/2_nominalLeon/base_datos_leon.xlsx")
+misDatos <- read_excel("base_datos_leon.xlsx")
 
 misDatos$Informante 
 #Qué ves?
@@ -161,8 +160,8 @@ data = data %>% mutate(Tarea = relevel(Tarea, 3))
 
 # Bondad del ajuste del modelo
 # Si el valor es <0.05 hay ASOCIACIÓN entre el patrón y la tarea
-1-pchisq(myModelo$deviance, myModelo$df.residual)
+1-pchisq(miModelo$deviance, miModelo$df.residual)
 
 # Nota para respuesta nominal pero predictor numérico (por ejemplo, 
-# ver si la altura del pico puede predecir el patrón) usaríamos la familia
+# ver si la altura del pico puede predecir el patrón) usaríamos la familia binomial
 # modelo<-glm(misDatos$Patrón, misDatos$alturaPico, family='binomial')
