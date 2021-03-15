@@ -37,7 +37,9 @@ misDatos <- misDatos %>% mutate_if(is.character,as.factor)
 
 # vamos a ver frecuencias de manera numerica
 # creación de una tabla de contingencia
-data <- table(misDatos$Patrón, misDatos$Tarea)
+datosParaAnalizar <-misDatos[misDatos$Informante=="wl61",]
+datosParaAnalizar <-droplevels(datosParaAnalizar)
+data <- table(datosParaAnalizar$Patrón, datosParaAnalizar$Tarea)
 data <- as.data.frame(data)
 colnames(data) <- c("Patrón", "Tarea", "Frecuencia")
 
@@ -80,7 +82,8 @@ dev.off()
 
 # Vamos a cambiar la etiqueta de patrón para que sea más entendible
 library(plyr)
-data$Patrón<- revalue(data$Patrón, c("¡H* LH%"="Híbrido", "¡H* L%"="Tradicional"))
+data$Patrón<- revalue(data$Patrón, c("¡H* LH%"="Híbrido", "¡H* L%"="Tradicional", "L+H* L%"="Tradicional", "L* H%"="Estándar"))
+
 # Y ahora si queremos que salga en el gráfico hay que volver a ejecutarlo
 
 #######
@@ -147,21 +150,43 @@ fisher.test(table(leidoContraInducido$Patrón, leidoContraInducido$Tarea))
 # usamos familia Poisson 
 #######
 
-miModelo <- glm(data$Frecuencia ~ data$Patrón + data$Tarea, 
-                    family = poisson)
+
+# vamos a predecir la aparición del patrón hibrido
+tradicional <- data[data$Patrón=="Tradicional",]
+miModelo <- glm(tradicional$Frecuencia ~ tradicional$Tarea, 
+                family = poisson)
 
 # Vamos a explorar un poco
 summary(miModelo)
+
+# Deviance Residuals: el residuo, todo lo que no es explicable por el modelo
+# lo queremos pequeño y con una distribución normal
+# ahora no lo podemos ver por el tipo de muestra (pequeña) en la ultima sesión lo veremos
+
 # el intercepto es lo que nos queda enmedio, lo escoge el programa por el orden
-# de los factores (el 1o que sale en el gráfico), se puede cambiar
-data = data %>% mutate(Tarea = relevel(Tarea, 3))
+# de los factores (el 1o que sale en el gráfico, alfabético), se puede cambiar
+hibridos = hibridos %>% mutate(Tarea = relevel(Tarea, 3))
 # y la estimación es la probabilidad de que te salga ese patrón, ahora solo 
-# nos preocupa el signo (más probable o menos probable)
+# nos preocupa el signo (más probable o menos probable), pero 
+# a partir de ese número (que es logaritmico). El log-count esperado para una unidad 
+# crecerá lo que pone en el estimado.
 
 # Bondad del ajuste del modelo
-# Si el valor es <0.05 hay ASOCIACIÓN entre el patrón y la tarea
+# Si el valor es <0.05 hay ASOCIACIÓN 
 1-pchisq(miModelo$deviance, miModelo$df.residual)
+# y es un buen modelo 
+pchisq(miModelo$deviance, miModelo$df.residual,lower.tail=FALSE)
 
-# Nota para respuesta nominal pero predictor numérico (por ejemplo, 
-# ver si la altura del pico puede predecir el patrón) usaríamos la familia binomial
+
+##### ahora vamos a usar más datos
+todo<- as.data.frame(table(misDatos$Patrón, misDatos$Tarea, misDatos$Informante))
+colnames(todo)<- c("Patrón", "Tarea", "Informante", "Frecuencia")
+miModelo <- glm(todo$Frecuencia ~ todo$Tarea+ todo$Informante,
+                family = poisson)
+summary(miModelo)
+
+# NOTA para respuesta nominal, pero predictor numérico (por ejemplo, 
+# ver si la altura del pico puede predecir el patrón) y siempre que tengamos dos
+# usaríamos la familia binomial y lo haríamso a partir de todo el dataset, y 
+# no de la tabla de contingencia
 # modelo<-glm(misDatos$Patrón, misDatos$alturaPico, family='binomial')
