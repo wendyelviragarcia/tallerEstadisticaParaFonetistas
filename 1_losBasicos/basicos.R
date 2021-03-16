@@ -4,7 +4,7 @@
 # Básicos
 ##########
 
-# Todo lo que tiene asterisco delante es información para nosotros
+# Todo lo que tiene almohadilla delante es información para nosotros
 # R no lo lee
 
 # abajo, hacemos cosas, aquí las anotamos para después poderlas repetir
@@ -48,6 +48,8 @@ b<- hola
 
 # c() crea "arrays" pueden ser de números o elementos con letras
 c<- c(14, 15, 10)
+c<- c("a", "b")
+
 c[1]
 c[2]
 
@@ -80,6 +82,10 @@ misDatos$Nombre[1]
 as.character(misDatos$F0)
 as.factor(misDatos$F0)
 as.numeric(misDatos$F0)
+
+
+misDatos$Sexo<- as.factor(misDatos$Sexo)
+
 
 #Obviamente, no vamos a crear una base de datos con miles de datos así.
 

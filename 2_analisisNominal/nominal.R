@@ -6,6 +6,7 @@ getwd()
 # ruta en Windows 
 # C:\\Users\\Nombre de usuario\\Desktop
 # C:/Users/Nombre de usuario/Desktop
+# /Users/tunombre/Desktop/
 
 setwd("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/2_analisisNominal/")
 ##########
@@ -59,9 +60,9 @@ ggplot(data=data, aes(x=Tarea, y=Frecuencia, fill=Patrón)) +
 
 miGráfico <- ggplot(data=data, aes(x=Tarea, y=Frecuencia, fill=Patrón)) + 
   #facet_grid(data$Tarea)+
-  geom_bar(position="fill", stat="identity")+
-  scale_fill_manual("Patrón", values = c("¡H* LH%" = "black", "¡H* L%" = "orange"))+
-  labs(title="Ocurrencias de patrones por tarea", x="", y="Esto es la frecuencia", fill="Estos son los patrones")
+  geom_bar(position="dodge", stat="identity")+
+  scale_fill_manual("Patrón", values = c("¡H* LH%" = "blue", "¡H* L%" = "yellow"))+
+  labs(title="Ocurrencias de patrones por tarea", x="", y="Frecuencia", fill="Estos son los patrones")
 
 # para guardarlo
 #tiff("splitbyRegionPercentage.tiff", units="cm", width=20, height=15, res=300)
@@ -70,6 +71,10 @@ miGráfico <- ggplot(data=data, aes(x=Tarea, y=Frecuencia, fill=Patrón)) +
 
 png("splitbyRegionPercentage.png", units="cm", width=20, height=15, res=300)
   miGráfico
+dev.off()
+
+tiff("splitbyRegionPercentage.tiff", units="cm", width=20, height=15, res=300)
+miGráfico
 dev.off()
 
 # otras opciones de position, ¡probadlas!
@@ -125,7 +130,7 @@ summary(data$Frecuencia)
 # lo más simple un chi cuadrado
 # le damos de comer la tabla de contingencia y ya esta
 chisq.test(table(misDatos$Patrón, misDatos$Tarea))
-
+chisq.test(data)
 # Teoría de la estadística. El test Chi solo se puede usar cuando ningún valor esperado es >5
 # Es decir ¡tenemos muy pocos datos para hacer eso! (Una celda tiene un valor de 0)
 # ¡Vamos a cambiar de test!
@@ -151,7 +156,7 @@ fisher.test(table(leidoContraInducido$Patrón, leidoContraInducido$Tarea))
 #######
 
 
-# vamos a predecir la aparición del patrón hibrido
+# vamos a predecir la aparición del patrón tradicional
 tradicional <- data[data$Patrón=="Tradicional",]
 miModelo <- glm(tradicional$Frecuencia ~ tradicional$Tarea, 
                 family = poisson)
@@ -165,7 +170,7 @@ summary(miModelo)
 
 # el intercepto es lo que nos queda enmedio, lo escoge el programa por el orden
 # de los factores (el 1o que sale en el gráfico, alfabético), se puede cambiar
-hibridos = hibridos %>% mutate(Tarea = relevel(Tarea, 3))
+tradicional = tradicional %>% mutate(Tarea = relevel(Tarea, 3))
 # y la estimación es la probabilidad de que te salga ese patrón, ahora solo 
 # nos preocupa el signo (más probable o menos probable), pero 
 # a partir de ese número (que es logaritmico). El log-count esperado para una unidad 
