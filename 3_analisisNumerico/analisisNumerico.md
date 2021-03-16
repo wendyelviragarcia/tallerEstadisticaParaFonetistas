@@ -7,7 +7,7 @@ Para instalarlos escribid en el terminal de R (la parte de abajo de RStudio)
 install.packages("dplyr","ggplot2","plyr")
 ```
 ## El contenido de la sesión
-1. Cargar una base de datos en formato csv
+1. Cargar una base de datos en formato csv (hoy sí que los de mates estarían orgullosos de nosotros)
 2. Variables factor: importancia y conversión de char a factor
 3. Descriptivos
 4. Gráficos de cajas y bigotes (crear y guardar)

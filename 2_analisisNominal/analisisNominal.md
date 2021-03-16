@@ -7,7 +7,7 @@ Para instalarlos escribid en el terminal de R (la parte de abajo de RStudio)
 install.packages("readxl","dplyr","ggplot2","plyr")
 ```
 ## El contenido de la sesión
-1. Cargar una base de datos en formato Excel
+1. Cargar una base de datos en formato Excel (no le digáis a ningún data analist que los lingüistas usamos excel, nos reñirán mucho)
 2. Variables factor: importancia y conversión de char a factor
 3. Tablas de contingencia (cálculo de frecuencias)
 4. Gráficos de barras con ggplot (crear y guardar)
