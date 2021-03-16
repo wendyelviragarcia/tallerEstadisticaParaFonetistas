@@ -2,9 +2,13 @@
 
 ## Antes de empezar
 Vamos a usar algunos paquetes de R
-Para instalarlos escribid en el terminal de R (la parte de abajo de RStudio)
+Para instalarlos escribid en el terminal de R (la parte de abajo de RStudio).
+Los de la primera línea deberían estar instalados del día anterior.
 ```R
 install.packages("dplyr","ggplot2","plyr")
+install.packages("multcomp", "car", "pgirmess")
+install.packages("nortest")
+
 ```
 ## El contenido de la sesión
 1. Cargar una base de datos en formato csv (hoy sí que los de mates estarían orgullosos de nosotros)
