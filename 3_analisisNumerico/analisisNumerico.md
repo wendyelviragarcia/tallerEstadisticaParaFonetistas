@@ -21,7 +21,7 @@ Vamos a trabajar con datos de ritmo que han sido publicados en:
 
 Elvira-García, Wendy y Marrero, Victoria. 2020. [El ritmo y la tasa de habla como ayuda diagnóstica en síndromes neurodegenerativos de los lóbulos fronto-temporales](http://www.doi.org/10.3989/loquens.2020.068). Loquens, 7(1), e068. 10.3989/loquens.2020.068
 
-El ritmo se mide en muchas métricas diferentes (no hay un consenso claro sobre cuáles usar). En esta clase vamos a ver algunas. Específicamente, la tasa de habla (en sonidos por segundo), el porcentaje de vocales (del tiempo de habla total) y el varco de las consonantes (Dellwo et Wagner, 2003). Los grupos que analizaremos son Controles vs pacientes diagnosticados con algún tipo de afasia progresiva primaria (demencia).
+El ritmo se mide en muchas métricas diferentes (no hay un consenso claro sobre cuáles usar). En esta clase vamos a ver algunas. Específicamente, la tasa de habla (en sonidos por segundo), el porcentaje de consonantes (del tiempo de habla total), el varco de las consonantes (Dellwo et Wagner, 2003) y el rPVI-C. Los grupos que analizaremos son Controles vs pacientes diagnosticados con algún tipo de afasia progresiva primaria (demencia).
 
 
 Los datos tienen esta pinta:
