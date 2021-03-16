@@ -27,9 +27,9 @@ En cada carpeta encontrarás un resumen de lo que contiene la sesión (archivo .
 
 4. [Modelos mixtos generalizados](4_modelosMixtos)
 * Modelos lineales (lm)
--efectos fijos (sexo, variedad)
+   - efectos fijos (sexo, variedad)
 * Modelos mixtos (lmer, glmer)
-- efectos aleatorios (sujeto, repetición/ítem)
+   - efectos aleatorios (sujeto, repetición/ítem)
 
 ## Bibliografía
 La única bibliografía del curso es este material, pero si te interesa el tema y quieres profundizar, aquí tienes algunas referencias.
