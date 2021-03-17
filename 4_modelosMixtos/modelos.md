@@ -13,7 +13,7 @@ install.packages("lme4","cAIC")
 ## El contenido de la sesión
 1. Cargamos la base de datos csv
 2. Visualizamos los datos
-3. La regresión: modelos lineales (lm), efectos fijos
+3. La regresión: modelos lineales generalizados (lm), efectos fijos
 4. Modelos mixtos (lmer) efectos random
 5. Evaluación de modelos: residuos y Akaike criterion
 6. ¡Quiero mi p! Como conseguir una p de un modelo mixto
