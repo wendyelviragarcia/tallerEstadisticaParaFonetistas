@@ -16,8 +16,6 @@ allDur <- read.csv("consonantDuration.csv")
 
 
 shapiro.test(allDur$dur)
-
-
 #duraciones no normales
 
 # comprobamos varianzas, ya ni haría falta
@@ -62,11 +60,26 @@ ggplot(data = allDur,aes(x=Grupo,y=dur,fill=Grupo, colour=Sujeto))+geom_boxplot(
 # la duración depende del grupo?
 # pero en vez de devolvernos si sí o no (si pueden ser parte de la misma muestra)
 # nos dice cuanto cambian los números dependiendo del grupo
-# a esto se le llama regresión y es como las fórmulitas aquellas del cole 
+# a esto se le llama regresión y es como las formulitas aquellas del cole 
 # en las que sacábamos la función de una pendiente
 
 modeloLineal <- lm(dur ~ Grupo, data=allDur)
 summary(modeloLineal)
+# ese intercepto no nos va muy bien... El orden dijimos que es automático
+# vamos a ver los niveles que tiene ese factor y en que orden
+levels(allDur$Grupo)
+# Vamos a hacer que la referencia sean los controles, el resultado es el mismo
+# solo es más intuitivo
+allDur = allDur %>% mutate(Grupo = relevel(Grupo, 4))
+levels(allDur$Grupo)
+summary(modeloLineal)
+# Ahora mejor. 
+# Vamos a entender este modelo, para después ir a los siguientes.
+# La duración estimada del grupo control es 70.830
+# en el modelo debería ser parecida.
+mean(allDur[allDur$Grupo=="Control",]$dur)
+# ¿Se entiende mejor el concepto de modelo?
+# Nos está prediciendo la media de los datos
 
 # pero la regresión ha existido toda la vida no?
 # Sí, nuestro objetivo no son los factores fijos, son los aleatorios
