@@ -1,6 +1,7 @@
 # cargamos todos los paquetes que vamos a usar
 library("multcomp", "car", "pgirmess")
 library("ggplot2", "nortest")
+#install.packages("nortest")
 
 # rutas en Windows 
 # C:\\Users\\Nombre de usuario\\Desktop
@@ -16,6 +17,7 @@ setwd("/Users/weg/OneDrive - UNED/git-me/tallerEstadisticaParaFonetistas/3_anali
 # recordáis que tuvimos que convertir todo a factor? 
 # nos lo vamos a ahorrar
 df <- read.csv("datosTasaHablayRitmo.csv", sep=",", dec= ".", stringsAsFactors=TRUE)
+df <- read.csv("/Users/tunombre/Desktop/datosTasaHablayRitmo.csv", sep=",", dec= ".", stringsAsFactors=TRUE)
 
 # Nota: scripts de praat normalmente el output es tab separated
 #df <- read.csv("datosTasaHablayRitmo.csv", sep="/t", stringsAsFactors=TRUE)
@@ -32,6 +34,8 @@ View(df)
 
 mean(df$Edad)
 min(df$Edad)
+max(df$Edad)
+sd(df$Edad)
 
 #################
 # CREACIÓN DE BOXPLOTS
@@ -44,7 +48,7 @@ boxplot(df$speechRate ~ df$Control, col=c("deepskyblue4","coral"))
 # Creeis que los controles hablan más rápido? 
 boxplot(df$speechRate ~ df$Diagnostico)
 
-# pero los gráficos bonitos son los de ggplot asi que vamos a ello
+# pero los gráficos bonitos son los de ggplot2 asi que vamos a ello
 #library(ggplot2)
 
 #uno simple
@@ -68,7 +72,7 @@ ggplot(df, aes(x=reorder(Diagnostico, -speechRate, FUN = median), y=-speechRate,
 
 # Pero esas labels son un poco feas ¿no?
 # ¡Voy con todo! (sí, como la vecina rubia)
-ggplot(df, aes(x=reorder(Diagnostico, -speechRate, FUN = median), y=speechRate,colour = Diagnostico)) +
+abc <- ggplot(df, aes(x=reorder(Diagnostico, -speechRate, FUN = median), y=speechRate,colour = Diagnostico)) +
   geom_jitter() +
   stat_boxplot(fill ="NA") +
   stat_boxplot(fill =c(NA,NA,NA,NA,NA,NA,NA,NA)) +
@@ -84,14 +88,14 @@ ggplot(df, aes(x=reorder(Diagnostico, -speechRate, FUN = median), y=speechRate,c
 # por ejemplo para png nos sobra el compression
 # tambien podemos crear la figura especificando los pixeles "in”, “cm”, “mm”
 ggsave("speechRate.tiff", units="cm", width=14, height=8, dpi=100, compression = 'lzw')
-
+ggsave("speechRate.png", units="cm", width=14, height=8, dpi=100)
 # 
 
 ###########
 # NORMALIDAD
 ############
 #vamos a crearnos una funcion customizada
-plotn <- function(x,main="", xlab="X",ylab="Densidad") {
+hola <- function(x,main="", xlab="X",ylab="Densidad") {
   min <- min(x)
   max <- max(x)
   media <- mean(x)
@@ -100,23 +104,23 @@ plotn <- function(x,main="", xlab="X",ylab="Densidad") {
   curve(dnorm(x,media,dt), min, max,add = T,col="blue")
   }
 
-plotn(df$speechRate,main="Distribución normal") #Grafico de x
+hola(df$speechRate,main="Distribución normal") #Grafico de x
 
 qqnorm(df$speechRate, pch = 1, frame = FALSE)
 qqline(df$speechRate, col = "steelblue", lwd = 2)
-#test de normalidad, datos normales p>.05, para pocos datos saphiro-wilk
+#test de normalidad, datos normales p>0.05, para pocos datos saphiro-wilk
 
 shapiro.test(df$speechRate) #normal
 shapiro.test(df$PerC)# NORMAL
 shapiro.test(df$VarcoC)#NO NORMAL
-shapiro.test(df$PVI.C)# algo no normal y significativo
+shapiro.test(df$PVI.C)# no normal
 
 # kolmogorov Smirnov (mejor con modificación de Lillefors) para más de 50 datos
 # para que veais como se hace, pero no lo podríamos aplicar porque tenemos 
 # 30 casos (en este caso 30 pacientes porque cada uno solo tiene 1 dato asociado)
 # en biología solo lo aplican si tienen un porrón de datos
 ks.test(df$speechRate,pnorm,mean(df$speechRate),sd(df$speechRate)) # estamos comparando nuestros datos con la d. normal
-#library("nortest")
+library("nortest")
 lillie.test(df$speechRate) # normal
 
 # para los normales también hay que mirar igualdad de las varianzas 
@@ -151,12 +155,15 @@ t.test(df$PerC)
 miAnova <- aov(speechRate~Diagnostico,data=df)
 #sacar la tabla de anova
 summary(miAnova)
+# F(34,7)=10.39, p =0.0004
+# F(34,7)=10.39, p <0.001
+
 
 # o lo que es lo mismo
 summary(aov(speechRate~Diagnostico,data=df))
 
 # otra manera de ver la tabla de anova
-#library(broom)
+library(broom)
 tidy(miAnova)
 
 #tabla de anova, hay que indicar modelo lineal (lm)
@@ -164,6 +171,7 @@ anova(lm(speechRate~Diagnostico,data=df))
 
 #### anova de dos factores (se suma el segundo factor)
 anova(lm(speechRate~Diagnostico+Edad,data=df))
+anova(lm(speechRate~Diagnostico+Sexo,data=df))
 
 # el post-hoc de toda la vida
 TukeyHSD(aov(speechRate~Diagnostico,data=df))
@@ -172,7 +180,8 @@ TukeyHSD(aov(speechRate~Diagnostico,data=df))
 # del otro estudio
 
 #pair-wise comparisons
-#library(multicomp)
+library("multcomp")
+
 pairWise <- glht(miAnova, linfct = mcp(Diagnostico = "Tukey"))
 summary(pairWise, test = adjusted(type = "bonferroni"))
 
@@ -186,7 +195,7 @@ plot(print(confint(pairWise)))
 
 # Mann-Whitney-Wilcoxon (alternativa al t test, solo dos niveles)
 wilcox.test(VarcoC ~ Control, data=df) # significativo
-
+# W= 133 
 
 # Kruskal-Wallis para más grupos
 kruskal.test(VarcoC ~ Diagnostico, data = df) # pero para los grupos ya no
@@ -203,6 +212,7 @@ pairwise.wilcox.test(df$PVI.C, df$Diagnostico, p.adjust.method = "BH")
 # o podemos hacer el test diseñado específicamente para cuando el Kruskal Wallis nos da significativo
 #library(pgirmess)
 kruskalmc(PVI.C ~ Diagnostico, data = df,cont="two-tailed")
+kruskalmc(df$PVI.C ~ df$Diagnostico, cont="two-tailed")
 
 # pero en cualquiera de los dos casos, no hay ninguna pareja que sea lo sificientemente potente
 #para dar significativo, conclusión...
