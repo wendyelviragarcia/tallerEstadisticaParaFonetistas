@@ -41,3 +41,6 @@ La única bibliografía del curso es este material, pero si te interesa el tema 
  * Casado Mancebo, Mario. 2021. [Curso de iniciación en Python](https://cursos.mcasado.org/cursos/curso-de-iniciación-en-python/)
 ### Para investigadores en general
  *  Maurandi, Antonio; Del Rio, Laura; Balsalobre Rodríguez, Carlos. 2013. [Fundamentos estadísticos para investigación. Introducción a R](https://gauss.inf.um.es/files/Fundamentos-estadisticos-para-investigacionIntroduccion-a-R.pdf)
+
+### Sobre cómo aprender R con el método comunicativo de enseñanza de lenguas
+[Charla de Riva Quiroga, RLadies Santiago de Chile](https://www.youtube.com/watch?v=FI_8bKiW8wg)
