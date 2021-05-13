@@ -3,8 +3,12 @@ Taller sobre [estadística con R ofrecido en la Universidad de La Laguna](https:
 
 La idea de este curso es realizar un trabajo que emule el trabajo que hace en R un investigador para escribir un paper desde cargar la base de datos, hacer los análisis estadísticos, crear las figuras y reportar los resultados.
 
-## Organización
+## Organización / Instrucciones
 En cada carpeta encontrarás un resumen de lo que contiene la sesión (archivo .md, clica en él para poder leerlo en línea), un script de R con el análisis que vamos a acometer y la base de datos que usaremos para hacerlo (algunas son csv y otras archivos de Excel para que veáis como importar diferentes archivos).
+1. Clica sobre el archivo .md para leerlo en línea
+2. Descarga el archivo .R y el .csv en tu ordenador
+3. Abre el archivo .R con RStudio en tu ordenador
+4. Sigue los pasos del script de Rstudio que has abierto para cargar la base de datos .csv en tu espacio de trabajo de R y realizar en análisis
 
 ## Sesiones
 
