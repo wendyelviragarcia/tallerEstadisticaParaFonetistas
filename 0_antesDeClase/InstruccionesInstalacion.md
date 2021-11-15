@@ -15,8 +15,8 @@ Instala primero R y después RStudio. Para descargar los programas sigue los enl
 
 ## Instalación de R
 Baja el instalador que corresponda a tu sistema operativo haciendo clic en el enlace, haz doble clic en el instalador y sigue los pasos. 
- - [Versión para Windows](https://cloud.r-project.org/bin/windows/base/R-4.0.4-win.exe)
- - [Versión para Mac](https://cran.r-project.org/bin/macosx/R-4.0.4.pkg)
+ - [Versión para Windows](https://cran.r-project.org/bin/windows/)
+ - [Versión para Mac](https://cran.r-project.org/bin/macosx/)
  - Si usas Linux, intenta instalarlo a partir de tu gestor de paquetes. Si no está, sigue este [link](https://cloud.r-project.org/bin/linux/)
 
 
